@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
+import '../../domain.dart';
 import '../../../../core/core.dart';
-import '../../repositories/respositories.dart';
 
 abstract class IGetUserTokenUseCase {
-  Future<Either<Failure, String>> call();
+  Future<Either<Failure, TokenEntity>> call();
 }
 
 class GetUserTokenUseCase implements IGetUserTokenUseCase {
@@ -12,7 +12,7 @@ class GetUserTokenUseCase implements IGetUserTokenUseCase {
   GetUserTokenUseCase(this._repository);
 
   @override
-  Future<Either<Failure, String>> call() async {
+  Future<Either<Failure, TokenEntity>> call() async {
     return await _repository.getUserToken();
   }
 }
