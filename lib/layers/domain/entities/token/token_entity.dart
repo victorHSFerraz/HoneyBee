@@ -17,6 +17,16 @@ class TokenEntity extends Equatable {
     return DateTime.now().isAfter(tokenExpirationAt);
   }
 
+  TokenEntity copyWith({
+    String? token,
+    DateTime? tokenExpirationAt,
+  }) {
+    return TokenEntity(
+      token: token ?? this.token,
+      tokenExpirationAt: tokenExpirationAt ?? this.tokenExpirationAt,
+    );
+  }
+
   @override
   String toString() {
     return 'AuthEntity(token: $token, tokenExpirationAt: $tokenExpirationAt)';

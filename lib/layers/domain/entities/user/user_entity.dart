@@ -6,8 +6,8 @@ class UserEntity extends Equatable {
   final String email;
   final String photoUrl;
   final DateTime createdAt;
-  final DateTime updatedAt;
-  final DateTime lastAccessAt;
+  final DateTime? updatedAt;
+  final DateTime? lastAccessAt;
 
   const UserEntity({
     required this.id,
@@ -15,23 +15,27 @@ class UserEntity extends Equatable {
     required this.email,
     required this.photoUrl,
     required this.createdAt,
-    required this.updatedAt,
-    required this.lastAccessAt,
+    this.updatedAt,
+    this.lastAccessAt,
   });
 
-  UserEntity updateUser({
+  UserEntity copyWith({
+    String? id,
     String? name,
     String? email,
     String? photoUrl,
+    DateTime? createdAt,
+    DateTime? updatedAt,
+    DateTime? lastAccessAt,
   }) {
     return UserEntity(
-      id: id,
+      id: id ?? this.id,
       name: name ?? this.name,
       email: email ?? this.email,
       photoUrl: photoUrl ?? this.photoUrl,
-      createdAt: createdAt,
-      updatedAt: DateTime.now(),
-      lastAccessAt: lastAccessAt,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+      lastAccessAt: lastAccessAt ?? this.lastAccessAt,
     );
   }
 

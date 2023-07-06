@@ -16,6 +16,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   equatable: ^2.0.5
   dartz: ^0.10.1
+  rive: ^0.11.4
+  animate_do: ^3.0.2
+  faker: ^2.1.0
+
 
 dev_dependencies:
   flutter_test:
@@ -26,6 +30,34 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+
+  assets:
+    - assets/rive/
+    - assets/fonts/
+
+  fonts:
+    - family: Pacifico
+      fonts:
+        - asset: assets/fonts/Pacifico-Regular.ttf
+          weight: 400
+
+    - family: CherryBombOne
+      fonts:
+        - asset: assets/fonts/CherryBombOne-Regular.ttf
+          weight: 400
+
+    - family: Quicksand
+      fonts:
+        - asset: assets/fonts/Quicksand-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Quicksand-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Quicksand-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Quicksand-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Quicksand-Bold.ttf
+          weight: 700
 
 
 
