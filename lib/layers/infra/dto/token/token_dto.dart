@@ -1,18 +1,18 @@
 import '../../../domain/domain.dart';
 
-class TokenDTO {
-  final String token;
-  final DateTime tokenExpirationAt;
+class TokenDTO extends TokenEntity {
+  final String userToken;
+  final DateTime tokenExpiration;
 
   const TokenDTO({
-    required this.token,
-    required this.tokenExpirationAt,
-  });
+    required this.userToken,
+    required this.tokenExpiration,
+  }) : super(token: userToken, tokenExpirationAt: tokenExpiration);
 
   factory TokenDTO.fromMap(Map<String, dynamic> map) {
     return TokenDTO(
-      token: map['token'],
-      tokenExpirationAt: map['tokenExpirationAt'] != null ? DateTime.parse(map['tokenExpirationAt']) : DateTime.now(),
+      userToken: map['token'],
+      tokenExpiration: map['tokenExpirationAt'] != null ? DateTime.parse(map['tokenExpirationAt']) : DateTime.now(),
     );
   }
 
@@ -21,12 +21,5 @@ class TokenDTO {
       'token': token,
       'tokenExpirationAt': tokenExpirationAt.toIso8601String(),
     };
-  }
-
-  TokenEntity toTokenEntity() {
-    return TokenEntity(
-      token: token,
-      tokenExpirationAt: tokenExpirationAt,
-    );
   }
 }
