@@ -3,14 +3,13 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i5;
+import 'dart:async' as _i6;
 
 import 'package:dartz/dartz.dart' as _i2;
-import 'package:honey_bee/core/core.dart' as _i6;
-import 'package:honey_bee/layers/domain/domain.dart' as _i4;
-import 'package:honey_bee/layers/infra/datasources/auth/auth_datasource.dart'
-    as _i7;
-import 'package:honey_bee/layers/infra/dto/dto.dart' as _i3;
+import 'package:honey_bee/core/core.dart' as _i7;
+import 'package:honey_bee/core/http_client/http_client.dart' as _i4;
+import 'package:honey_bee/layers/domain/domain.dart' as _i5;
+import 'package:honey_bee/layers/infra/infra.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -44,52 +43,140 @@ class _FakeTokenDTO_1 extends _i1.SmartFake implements _i3.TokenDTO {
         );
 }
 
+class _FakeHttpResponse_2 extends _i1.SmartFake implements _i4.HttpResponse {
+  _FakeHttpResponse_2(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
 /// A class which mocks [IAuthRepository].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockIAuthRepository extends _i1.Mock implements _i4.IAuthRepository {
+class MockIAuthRepository extends _i1.Mock implements _i5.IAuthRepository {
   MockIAuthRepository() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i5.Future<_i2.Either<_i6.Failure, _i4.TokenEntity>> getUserToken() =>
+  _i6.Future<_i2.Either<_i7.Failure, _i5.TokenEntity>> getUserToken() =>
       (super.noSuchMethod(
         Invocation.method(
           #getUserToken,
           [],
         ),
-        returnValue: _i5.Future<_i2.Either<_i6.Failure, _i4.TokenEntity>>.value(
-            _FakeEither_0<_i6.Failure, _i4.TokenEntity>(
+        returnValue: _i6.Future<_i2.Either<_i7.Failure, _i5.TokenEntity>>.value(
+            _FakeEither_0<_i7.Failure, _i5.TokenEntity>(
           this,
           Invocation.method(
             #getUserToken,
             [],
           ),
         )),
-      ) as _i5.Future<_i2.Either<_i6.Failure, _i4.TokenEntity>>);
+      ) as _i6.Future<_i2.Either<_i7.Failure, _i5.TokenEntity>>);
 }
 
 /// A class which mocks [IAuthDatasource].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockIAuthDatasource extends _i1.Mock implements _i7.IAuthDatasource {
+class MockIAuthDatasource extends _i1.Mock implements _i3.IAuthDatasource {
   MockIAuthDatasource() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i5.Future<_i3.TokenDTO> getUserToken() => (super.noSuchMethod(
+  _i6.Future<_i3.TokenDTO> getUserToken() => (super.noSuchMethod(
         Invocation.method(
           #getUserToken,
           [],
         ),
-        returnValue: _i5.Future<_i3.TokenDTO>.value(_FakeTokenDTO_1(
+        returnValue: _i6.Future<_i3.TokenDTO>.value(_FakeTokenDTO_1(
           this,
           Invocation.method(
             #getUserToken,
             [],
           ),
         )),
-      ) as _i5.Future<_i3.TokenDTO>);
+      ) as _i6.Future<_i3.TokenDTO>);
+}
+
+/// A class which mocks [IHttpClient].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockIHttpClient extends _i1.Mock implements _i4.IHttpClient {
+  MockIHttpClient() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i6.Future<_i4.HttpResponse> get(String? url) => (super.noSuchMethod(
+        Invocation.method(
+          #get,
+          [url],
+        ),
+        returnValue: _i6.Future<_i4.HttpResponse>.value(_FakeHttpResponse_2(
+          this,
+          Invocation.method(
+            #get,
+            [url],
+          ),
+        )),
+      ) as _i6.Future<_i4.HttpResponse>);
+  @override
+  _i6.Future<_i4.HttpResponse> post(
+    String? url, {
+    required Map<String, dynamic>? body,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #post,
+          [url],
+          {#body: body},
+        ),
+        returnValue: _i6.Future<_i4.HttpResponse>.value(_FakeHttpResponse_2(
+          this,
+          Invocation.method(
+            #post,
+            [url],
+            {#body: body},
+          ),
+        )),
+      ) as _i6.Future<_i4.HttpResponse>);
+  @override
+  _i6.Future<_i4.HttpResponse> put(
+    String? url, {
+    required Map<String, dynamic>? body,
+  }) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #put,
+          [url],
+          {#body: body},
+        ),
+        returnValue: _i6.Future<_i4.HttpResponse>.value(_FakeHttpResponse_2(
+          this,
+          Invocation.method(
+            #put,
+            [url],
+            {#body: body},
+          ),
+        )),
+      ) as _i6.Future<_i4.HttpResponse>);
+  @override
+  _i6.Future<_i4.HttpResponse> delete(String? url) => (super.noSuchMethod(
+        Invocation.method(
+          #delete,
+          [url],
+        ),
+        returnValue: _i6.Future<_i4.HttpResponse>.value(_FakeHttpResponse_2(
+          this,
+          Invocation.method(
+            #delete,
+            [url],
+          ),
+        )),
+      ) as _i6.Future<_i4.HttpResponse>);
 }

@@ -19,6 +19,7 @@ dependencies:
   rive: ^0.11.4
   animate_do: ^3.0.2
   faker: ^2.1.0
+  dio: ^5.2.1+1
 
 
 
