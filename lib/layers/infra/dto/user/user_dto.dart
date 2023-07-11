@@ -21,22 +21,22 @@ class UserDTO extends UserEntity {
 
   factory UserDTO.fromMap(Map<String, dynamic> map) {
     return UserDTO(
-      id: map['userId'],
-      name: map['userName'],
-      email: map['userEmail'],
-      photoUrl: map['userPhotoUrl'],
-      createdAt: map['userCreatedAt'] != null ? DateTime.parse(map['userCreatedAt']) : DateTime.now(),
+      id: map['id'],
+      name: map['name'],
+      email: map['email'],
+      photoUrl: map['photoUrl'],
+      createdAt: map['createdAt'] != null ? DateTime.parse(map['createdAt']) : DateTime.now(),
       authToken: TokenDTO.fromMap(map['authToken']),
     );
   }
 
   Map<String, dynamic> toMap() {
     return {
-      'userId': id,
-      'userName': name,
-      'userEmail': email,
-      'userPhotoUrl': photoUrl,
-      'userCreatedAt': createdAt.toIso8601String(),
+      'id': id,
+      'name': name,
+      'email': email,
+      'photoUrl': photoUrl,
+      'createdAt': createdAt.toIso8601String(),
       'authToken': authToken.toMap(),
     };
   }
