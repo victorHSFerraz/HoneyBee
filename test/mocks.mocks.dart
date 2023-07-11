@@ -3,11 +3,14 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i4;
+import 'dart:async' as _i5;
 
 import 'package:dartz/dartz.dart' as _i2;
-import 'package:honey_bee/core/core.dart' as _i5;
-import 'package:honey_bee/layers/domain/domain.dart' as _i3;
+import 'package:honey_bee/core/core.dart' as _i6;
+import 'package:honey_bee/layers/domain/domain.dart' as _i4;
+import 'package:honey_bee/layers/infra/datasources/auth/auth_datasource.dart'
+    as _i7;
+import 'package:honey_bee/layers/infra/dto/dto.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -31,28 +34,62 @@ class _FakeEither_0<L, R> extends _i1.SmartFake implements _i2.Either<L, R> {
         );
 }
 
+class _FakeTokenDTO_1 extends _i1.SmartFake implements _i3.TokenDTO {
+  _FakeTokenDTO_1(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
 /// A class which mocks [IAuthRepository].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockIAuthRepository extends _i1.Mock implements _i3.IAuthRepository {
+class MockIAuthRepository extends _i1.Mock implements _i4.IAuthRepository {
   MockIAuthRepository() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i4.Future<_i2.Either<_i5.Failure, _i3.TokenEntity>> getUserToken() =>
+  _i5.Future<_i2.Either<_i6.Failure, _i4.TokenEntity>> getUserToken() =>
       (super.noSuchMethod(
         Invocation.method(
           #getUserToken,
           [],
         ),
-        returnValue: _i4.Future<_i2.Either<_i5.Failure, _i3.TokenEntity>>.value(
-            _FakeEither_0<_i5.Failure, _i3.TokenEntity>(
+        returnValue: _i5.Future<_i2.Either<_i6.Failure, _i4.TokenEntity>>.value(
+            _FakeEither_0<_i6.Failure, _i4.TokenEntity>(
           this,
           Invocation.method(
             #getUserToken,
             [],
           ),
         )),
-      ) as _i4.Future<_i2.Either<_i5.Failure, _i3.TokenEntity>>);
+      ) as _i5.Future<_i2.Either<_i6.Failure, _i4.TokenEntity>>);
+}
+
+/// A class which mocks [IAuthDatasource].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockIAuthDatasource extends _i1.Mock implements _i7.IAuthDatasource {
+  MockIAuthDatasource() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i5.Future<_i3.TokenDTO> getUserToken() => (super.noSuchMethod(
+        Invocation.method(
+          #getUserToken,
+          [],
+        ),
+        returnValue: _i5.Future<_i3.TokenDTO>.value(_FakeTokenDTO_1(
+          this,
+          Invocation.method(
+            #getUserToken,
+            [],
+          ),
+        )),
+      ) as _i5.Future<_i3.TokenDTO>);
 }
