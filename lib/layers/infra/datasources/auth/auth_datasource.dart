@@ -1,4 +1,4 @@
-import 'package:honey_bee/layers/infra/dto/dto.dart';
+import '../../infra.dart';
 
 abstract class IAuthDatasource {
   Future<TokenDTO> getUserToken();

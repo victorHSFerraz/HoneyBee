@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:honey_bee/core/core.dart';
-import 'package:honey_bee/layers/domain/domain.dart';
-import 'package:honey_bee/layers/infra/datasources/auth/auth_datasource.dart';
+import '../../infra.dart';
+import '../../../../core/core.dart';
+import '../../../domain/domain.dart';
 
 class AuthRepository implements IAuthRepository {
   final IAuthDatasource datasource;

@@ -1,2 +1,2 @@
-export 'token/token.dart';
-export 'user/user.dart';
+export 'token/token_entity.dart';
+export 'user/user_entity.dart';
