@@ -1,5 +1,5 @@
 import 'package:honey_bee/core/core.dart';
-import 'package:honey_bee/core/http_client/http_client.dart';
+import 'package:honey_bee/core/network/http_client/http_client.dart';
 
 import '../../infra.dart';
 

@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
-import 'layers/presenter/presenter.dart';
+import 'package:honey_bee/bootstrap.dart';
+import 'package:honey_bee/features/splash/presentation/page/splash_page.dart';
+import 'injection_container.dart' as di;
 
-void main() {
+import 'core/storage/storage.dart';
+
+void main() async {
+  await bootstrap();
   runApp(
     MaterialApp(
       title: 'HoneyBee',
@@ -9,7 +14,7 @@ void main() {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SplashPage(),
+      home: SplashPage(storage: di.getIt<IStorage>()),
     ),
   );
 }

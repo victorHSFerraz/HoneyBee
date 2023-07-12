@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:honey_bee/core/dio/http.dart';
-import 'package:honey_bee/core/http_client/http_client.dart';
+import 'package:honey_bee/core/network/dio/http.dart';
+import 'package:honey_bee/core/network/http_client/http_client.dart';
 
 class HttpClientDio implements IHttpClient {
   late Http _http;

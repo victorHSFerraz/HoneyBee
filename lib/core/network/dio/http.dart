@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
-import 'package:honey_bee/core/dio/interceptor.dart';
+import 'package:honey_bee/core/network/dio/interceptor.dart';
 
 class Http extends DioForNative {
   Http(BaseOptions options) : super(options) {
