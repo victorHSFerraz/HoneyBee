@@ -9,7 +9,7 @@ Future<void> bootstrap() async {
   await runZonedGuarded(
     () async {
       _setAndroidSystemUIColor();
-      await di.init();
+      di.init();
     },
     (error, stackTrace) => log(error.toString(), stackTrace: stackTrace),
   );

@@ -1,11 +1,11 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-import 'storage.dart';
+import 'i_storage.dart';
 
 class SecureStorageService implements IStorage {
   final FlutterSecureStorage secureStorage;
 
-  SecureStorageService({required this.secureStorage});
+  const SecureStorageService({required this.secureStorage});
 
   @override
   Future<void> save(String key, dynamic value) async {

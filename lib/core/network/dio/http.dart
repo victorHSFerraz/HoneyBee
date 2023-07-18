@@ -2,13 +2,14 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
-import 'package:honey_bee/core/network/dio/interceptor.dart';
+import 'package:honey_bee/core/network/dio/dio_interceptor.dart';
 
 class Http extends DioForNative {
   Http(BaseOptions options) : super(options) {
     (httpClientAdapter as IOHttpClientAdapter).createHttpClient = () {
       final HttpClient client = HttpClient();
       client.badCertificateCallback = (_, __, ___) => true;
+
       return client;
     };
     options.baseUrl = "https://api.github.com/";

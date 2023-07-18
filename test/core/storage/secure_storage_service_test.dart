@@ -1,6 +1,8 @@
+// ignore_for_file: no-empty-block
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:honey_bee/core/storage/secure_storage_service.dart';
-import 'package:honey_bee/core/storage/storage.dart';
+import 'package:honey_bee/core/storage/i_storage.dart';
 import 'package:mockito/mockito.dart';
 
 import '../../mocks.mocks.dart';

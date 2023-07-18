@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../core/storage/storage.dart';
+import '../../../../core/storage/i_storage.dart';
 import 'package:rive/rive.dart';
 
 import '../../../../shared/shared.dart';
@@ -36,6 +36,7 @@ class SplashPage extends StatelessWidget {
                     });
                   }
                 }
+
                 return const CustomCircularProgressIndicator(
                   strokeWidth: 3,
                 );

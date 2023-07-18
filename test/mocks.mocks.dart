@@ -3,10 +3,11 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i4;
+import 'dart:async' as _i5;
 
 import 'package:flutter_secure_storage/flutter_secure_storage.dart' as _i3;
-import 'package:honey_bee/core/network/http_client/http_client.dart' as _i2;
+import 'package:honey_bee/core/network/http_client/http_response.dart' as _i2;
+import 'package:honey_bee/core/network/http_client/i_http_client.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -95,27 +96,27 @@ class _FakeMacOsOptions_6 extends _i1.SmartFake implements _i3.MacOsOptions {
 /// A class which mocks [IHttpClient].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockIHttpClient extends _i1.Mock implements _i2.IHttpClient {
+class MockIHttpClient extends _i1.Mock implements _i4.IHttpClient {
   MockIHttpClient() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i4.Future<_i2.HttpResponse> get(String? url) => (super.noSuchMethod(
+  _i5.Future<_i2.HttpResponse> get(String? url) => (super.noSuchMethod(
         Invocation.method(
           #get,
           [url],
         ),
-        returnValue: _i4.Future<_i2.HttpResponse>.value(_FakeHttpResponse_0(
+        returnValue: _i5.Future<_i2.HttpResponse>.value(_FakeHttpResponse_0(
           this,
           Invocation.method(
             #get,
             [url],
           ),
         )),
-      ) as _i4.Future<_i2.HttpResponse>);
+      ) as _i5.Future<_i2.HttpResponse>);
   @override
-  _i4.Future<_i2.HttpResponse> post(
+  _i5.Future<_i2.HttpResponse> post(
     String? url, {
     required Map<String, dynamic>? body,
   }) =>
@@ -125,7 +126,7 @@ class MockIHttpClient extends _i1.Mock implements _i2.IHttpClient {
           [url],
           {#body: body},
         ),
-        returnValue: _i4.Future<_i2.HttpResponse>.value(_FakeHttpResponse_0(
+        returnValue: _i5.Future<_i2.HttpResponse>.value(_FakeHttpResponse_0(
           this,
           Invocation.method(
             #post,
@@ -133,9 +134,9 @@ class MockIHttpClient extends _i1.Mock implements _i2.IHttpClient {
             {#body: body},
           ),
         )),
-      ) as _i4.Future<_i2.HttpResponse>);
+      ) as _i5.Future<_i2.HttpResponse>);
   @override
-  _i4.Future<_i2.HttpResponse> put(
+  _i5.Future<_i2.HttpResponse> put(
     String? url, {
     required Map<String, dynamic>? body,
   }) =>
@@ -145,7 +146,7 @@ class MockIHttpClient extends _i1.Mock implements _i2.IHttpClient {
           [url],
           {#body: body},
         ),
-        returnValue: _i4.Future<_i2.HttpResponse>.value(_FakeHttpResponse_0(
+        returnValue: _i5.Future<_i2.HttpResponse>.value(_FakeHttpResponse_0(
           this,
           Invocation.method(
             #put,
@@ -153,21 +154,21 @@ class MockIHttpClient extends _i1.Mock implements _i2.IHttpClient {
             {#body: body},
           ),
         )),
-      ) as _i4.Future<_i2.HttpResponse>);
+      ) as _i5.Future<_i2.HttpResponse>);
   @override
-  _i4.Future<_i2.HttpResponse> delete(String? url) => (super.noSuchMethod(
+  _i5.Future<_i2.HttpResponse> delete(String? url) => (super.noSuchMethod(
         Invocation.method(
           #delete,
           [url],
         ),
-        returnValue: _i4.Future<_i2.HttpResponse>.value(_FakeHttpResponse_0(
+        returnValue: _i5.Future<_i2.HttpResponse>.value(_FakeHttpResponse_0(
           this,
           Invocation.method(
             #delete,
             [url],
           ),
         )),
-      ) as _i4.Future<_i2.HttpResponse>);
+      ) as _i5.Future<_i2.HttpResponse>);
 }
 
 /// A class which mocks [FlutterSecureStorage].
@@ -228,7 +229,7 @@ class MockFlutterSecureStorage extends _i1.Mock
         ),
       ) as _i3.MacOsOptions);
   @override
-  _i4.Future<void> write({
+  _i5.Future<void> write({
     required String? key,
     required String? value,
     _i3.IOSOptions? iOptions,
@@ -253,11 +254,11 @@ class MockFlutterSecureStorage extends _i1.Mock
             #wOptions: wOptions,
           },
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
-  _i4.Future<String?> read({
+  _i5.Future<String?> read({
     required String? key,
     _i3.IOSOptions? iOptions,
     _i3.AndroidOptions? aOptions,
@@ -280,10 +281,10 @@ class MockFlutterSecureStorage extends _i1.Mock
             #wOptions: wOptions,
           },
         ),
-        returnValue: _i4.Future<String?>.value(),
-      ) as _i4.Future<String?>);
+        returnValue: _i5.Future<String?>.value(),
+      ) as _i5.Future<String?>);
   @override
-  _i4.Future<bool> containsKey({
+  _i5.Future<bool> containsKey({
     required String? key,
     _i3.IOSOptions? iOptions,
     _i3.AndroidOptions? aOptions,
@@ -306,10 +307,10 @@ class MockFlutterSecureStorage extends _i1.Mock
             #wOptions: wOptions,
           },
         ),
-        returnValue: _i4.Future<bool>.value(false),
-      ) as _i4.Future<bool>);
+        returnValue: _i5.Future<bool>.value(false),
+      ) as _i5.Future<bool>);
   @override
-  _i4.Future<void> delete({
+  _i5.Future<void> delete({
     required String? key,
     _i3.IOSOptions? iOptions,
     _i3.AndroidOptions? aOptions,
@@ -332,11 +333,11 @@ class MockFlutterSecureStorage extends _i1.Mock
             #wOptions: wOptions,
           },
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
   @override
-  _i4.Future<Map<String, String>> readAll({
+  _i5.Future<Map<String, String>> readAll({
     _i3.IOSOptions? iOptions,
     _i3.AndroidOptions? aOptions,
     _i3.LinuxOptions? lOptions,
@@ -357,10 +358,10 @@ class MockFlutterSecureStorage extends _i1.Mock
             #wOptions: wOptions,
           },
         ),
-        returnValue: _i4.Future<Map<String, String>>.value(<String, String>{}),
-      ) as _i4.Future<Map<String, String>>);
+        returnValue: _i5.Future<Map<String, String>>.value(<String, String>{}),
+      ) as _i5.Future<Map<String, String>>);
   @override
-  _i4.Future<void> deleteAll({
+  _i5.Future<void> deleteAll({
     _i3.IOSOptions? iOptions,
     _i3.AndroidOptions? aOptions,
     _i3.LinuxOptions? lOptions,
@@ -381,7 +382,7 @@ class MockFlutterSecureStorage extends _i1.Mock
             #wOptions: wOptions,
           },
         ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
+        returnValue: _i5.Future<void>.value(),
+        returnValueForMissingStub: _i5.Future<void>.value(),
+      ) as _i5.Future<void>);
 }
