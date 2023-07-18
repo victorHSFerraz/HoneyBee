@@ -24,6 +24,6 @@ class Http extends DioForNative {
       'Accept': 'application/json',
     };
 
-    interceptors.add(DioInterceptor());
+    interceptors.add(const DioInterceptor());
   }
 }

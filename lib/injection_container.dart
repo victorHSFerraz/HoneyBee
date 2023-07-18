@@ -7,5 +7,5 @@ import 'core/storage/i_storage.dart';
 final GetIt getIt = GetIt.instance;
 
 void init() {
-  getIt.registerSingleton<IStorage>(SecureStorageService(secureStorage: const FlutterSecureStorage()));
+  getIt.registerSingleton<IStorage>(const SecureStorageService(secureStorage: FlutterSecureStorage()));
 }
